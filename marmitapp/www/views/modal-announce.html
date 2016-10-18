@@ -1,0 +1,33 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Anunciar</h1>
+        <button class="button button-clear button-assertive" ng-click="announceModal.hide()">Cancelar</button>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <div class="list">
+
+            <label class="item item-input">
+                <input type="text" placeholder="Nome" ng-model="marmita.name" />
+            </label>
+
+            <label class="item item-input">
+                <input type="number" placeholder="Preço (R$)" step="0.1" min="0" ng-model="marmita.price" />
+            </label>
+
+            <label class="item item-input">
+                <input type="text" placeholder="Imagem (URL)" ng-model="marmita.imageUrl" />
+            </label>
+
+            <label class="item item-input">
+                <textarea placeholder="Descrição (opcional)" ng-model="marmita.description"></textarea>
+            </label>
+
+            <button class="button button-full button-assertive"
+                    ng-click="announce()"
+                    ng-disabled="!marmita.name || !marmita.price || !marmita.imageUrl">
+
+                Anunciar
+            </button>
+        </div>
+    </ion-content>
+</ion-modal-view>

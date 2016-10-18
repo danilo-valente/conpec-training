@@ -1,0 +1,21 @@
+<ion-view view-title="Ofertas">
+    <ion-nav-buttons side="primary">
+        <button class="button icon ion-plus" ng-click="openAnnounceModal()"></button>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="secondary">
+        <button class="button icon ion-android-exit" ng-click="logout()"></button>
+    </ion-nav-buttons>
+
+    <ion-content>
+        <ion-list>
+            <a class="item item-thumbnail-left" ng-repeat="marmita in marmitas" ng-click="addToCart(marmita)">
+                <img ng-src="{{ marmita.imageUrl }}" />
+                <h2>
+                    <strong>{{ marmita.price | currency:'R$' }}</strong> | {{ marmita.name }}
+                </h2>
+                <p ng-if="marmita.description">{{ marmita.description }}</p>
+            </a>
+        </ion-list>
+    </ion-content>
+</ion-view>
